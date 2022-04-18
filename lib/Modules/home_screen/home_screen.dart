@@ -15,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   List<Widget> Screens = [HomeScreen(), History()];
   int current = 0;
+  var selectedIndex = 0;
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavBar(),
@@ -140,11 +141,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               SizedBox(
                 height: 230,
                 width: double.infinity,
                 child: PageView.builder(
+                    onPageChanged: (index) {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                    },
                     controller: PageController(viewportFraction: 1),
                     itemCount: appBannerList.length,
                     itemBuilder: (context, index) {
@@ -159,6 +165,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       );
                     }),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ...List.generate(
+                      appBannerList.length,
+                      (index) => Indicator(
+                          isActive: selectedIndex == index ? true : false))
+                ],
               ),
               const SizedBox(
                 height: 20,
@@ -194,11 +209,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Colors.white,
                             letterSpacing: 1.5),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Color(0xffffa726),
+                          color: const Color(0xffffa726),
                         ),
                         // ignore: deprecated_member_use
                         child: MaterialButton(
