@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/Modules/history.dart';
+import 'package:project/Modules/imageview.dart';
 import 'package:project/shared/shared.component/components.dart';
 import 'nav_bar.dart';
 
@@ -140,11 +141,82 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.asset(
-                  "assets/Back2.jpg",
-                  width: double.infinity,
+              SizedBox(
+                height: 230,
+                width: double.infinity,
+                child: PageView.builder(
+                    controller: PageController(viewportFraction: 1),
+                    itemCount: appBannerList.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(3.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: NetworkImage(appBannerList[index].url),
+                                  fit: BoxFit.fill),
+                              borderRadius: BorderRadius.circular(15)),
+                        ),
+                      );
+                    }),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              //////////////////////////////////////////////
+              Container(
+                width: double.infinity,
+                height: 240,
+                decoration: BoxDecoration(
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 2.0,
+                      offset: Offset(1, 5),
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(20),
+                  image: const DecorationImage(
+                      fit: BoxFit.fill,
+                      image: NetworkImage(
+                          'https://focanocliente.com.br/wp-content/uploads/2020/10/customer-service.png')),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(25.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Services',
+                        style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            letterSpacing: 1.5),
+                      ),
+                      Spacer(),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xffffa726),
+                        ),
+                        // ignore: deprecated_member_use
+                        child: MaterialButton(
+                          padding: const EdgeInsets.all(15),
+                          // shape: RoundedRectangleBorder(
+                          //     borderRadius: BorderRadius.circular(20)),
+                          onPressed: () {
+                            Navigator.of(context).pushNamed("report");
+                          },
+                          child: const Text("Learn More",
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  // letterSpacing: 1.5,
+                                  color: Colors.white)),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
