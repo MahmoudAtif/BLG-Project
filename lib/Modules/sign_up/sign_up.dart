@@ -24,7 +24,7 @@ class _RegisterState extends State<Register> {
       appBar: AppBar(
         elevation: 0,
         leading: const BackButton(
-          color: Color(0xffFFFA726),
+          color: Colors.black,
         ),
         backgroundColor: Colors.white,
       ),
@@ -69,7 +69,7 @@ class _RegisterState extends State<Register> {
                 ),
                 TextFormField(
                   controller: name,
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.name,
                   decoration: const InputDecoration(
                     hintText: "Name",
                     prefixIcon: Icon(
@@ -90,7 +90,7 @@ class _RegisterState extends State<Register> {
                 ),
                 TextFormField(
                   controller: email,
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: const InputDecoration(
                     hintText: "Email Address",
                     prefixIcon: Icon(
@@ -111,7 +111,7 @@ class _RegisterState extends State<Register> {
                 ),
                 TextFormField(
                   controller: password,
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.text,
                   decoration: const InputDecoration(
                     hintText: "Password",
                     prefixIcon: Icon(
@@ -132,7 +132,7 @@ class _RegisterState extends State<Register> {
                 ),
                 TextFormField(
                   controller: confirmPassword,
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.text,
                   decoration: const InputDecoration(
                     hintText: "ConfirmPassword",
                     prefixIcon: Icon(
@@ -174,10 +174,7 @@ class _RegisterState extends State<Register> {
                 ),
                 deffaultButton(
                   function: () {
-                    if (formkey.currentState!.validate()) {
-                      // print(emailControler.text);
-                      // print(PasswordControler.text);
-                    }
+                    if (formkey.currentState!.validate()) {}
                   },
                   text: "Sign Up",
                   TextColor: Colors.white,

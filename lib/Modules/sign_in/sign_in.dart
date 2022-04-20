@@ -22,15 +22,9 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar:AppBar(
       backgroundColor: Colors.white,
-      //   elevation: 0,
-      // ),
       body: Padding(
-        // const to work in compile time not in run time
         padding: const EdgeInsets.all(25.0),
-
-        // عاشن لما الكيبورد تغطي علي الشاشه اقدر اعمل اسكرول
         child: SingleChildScrollView(
           child: Form(
             key: formkey,
@@ -50,19 +44,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ],
                 ),
-                //دي بتنزل مسافه مابين الحاجاه الي فوقيها والي تحتيها او بمعني اصح بتعمل خانه فاضيه
                 const SizedBox(
                   height: 30,
                 ),
                 TextFormField(
                   controller: emailControler,
-                  // To Change Type Of Form To Email And Can Change to (Phone , number )
                   keyboardType: TextInputType.emailAddress,
                   decoration: const InputDecoration(
                     hintText: "Email Address",
                     prefixIcon: Icon(
                       Icons.email,
-                      // color: Color(0xff0D47A1),
                     ),
                   ),
                   validator: (value) {
@@ -77,19 +68,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 50,
                 ),
                 TextFormField(
-                  //
-                  //  بحطها دي بتسحل البيانات الي خدتها من الفورمبحطها جوا Variable
                   controller: PasswordControler,
                   keyboardType: TextInputType.visiblePassword,
-                  // بحطها في متغير عشان اقدر اغير قيمتها
                   obscureText: isPassword,
                   decoration: InputDecoration(
                     hintText: "Password",
-                    // labelText: "Password",
-                    // labelStyle: TextStyle(color: Color(0xff0D47A1),),
                     prefixIcon: const Icon(
                       Icons.lock,
-                      // color: Color(0xff0D47A1),
                     ),
                     suffixIcon: IconButton(
                       onPressed: () {
@@ -101,7 +86,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         isPassword
                             ? Icons.visibility_off
                             : Icons.remove_red_eye,
-                        // color: const Color(0xff0D47A1),
                       ),
                     ),
                   ),

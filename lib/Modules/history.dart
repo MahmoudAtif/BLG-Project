@@ -34,69 +34,8 @@ class _HistoryState extends State<History> {
               const SizedBox(
                 height: 20,
               ),
-              // Container(
-              //   decoration: BoxDecoration(
-              //     color: Color(0xffffa726),
-              //     borderRadius: BorderRadius.circular(15),
-              //     boxShadow: const [
-              //       BoxShadow(
-              //         color: Colors.grey,
-              //         blurRadius: 2.0,
-              //         offset: Offset(1, 5),
-              //       ),
-              //     ],
-              //     image: const DecorationImage(
-              //         fit: BoxFit.cover,
-              //         image: NetworkImage(
-              //             'https://c0.wallpaperflare.com/preview/413/279/829/green-leaf-with-white-background.jpg')),
-              //   ),
-              //   width: double.infinity,
-              //   height: 100,
-              //   child: Padding(
-              //     padding: const EdgeInsets.all(20.0),
-              //     child: Column(
-              //       crossAxisAlignment: CrossAxisAlignment.start,
-              //       children: [
-              //         const Text(
-              //           'Violation Type',
-              //           style: TextStyle(
-              //             fontSize: 18,
-              //             // fontWeight: FontWeight.bold,
-              //             color: Colors.black,
-              //           ),
-              //         ),
-              //         const SizedBox(
-              //           height: 18,
-              //         ),
-              //         Row(
-              //           children: [
-              //             Text(
-              //               'Date: 20/10/2022',
-              //               style: TextStyle(
-              //                 fontSize: 18,
-              //                 color: Colors.black,
-              //               ),
-              //             ),
-              //             Spacer(),
-              //             Text(
-              //               'Status',
-              //               style: TextStyle(
-              //                 fontSize: 18,
-              //                 color: Colors.red,
-              //               ),
-              //             ),
-              //           ],
-              //         )
-              //       ],
-              //     ),
-              //   ),
-              // ),
-              // const SizedBox(
-              //   height: 20,
-              // ),
               ListView.separated(
                 shrinkWrap: true,
-                //بيخلي الاسكرول يوقف عشان السكرول بتاع الكولمن كلو يشتغل
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) => Violations(),
                 separatorBuilder: (BuildContext context, int index) =>
@@ -142,7 +81,6 @@ class _HistoryState extends State<History> {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  // fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
               ),

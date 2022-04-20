@@ -9,8 +9,6 @@ class Profile extends StatefulWidget {
   State<Profile> createState() => _ProfileState();
 }
 
-//
-
 class _ProfileState extends State<Profile> {
   bool showPassword = false;
   @override
@@ -94,7 +92,6 @@ class _ProfileState extends State<Profile> {
                     hintText: "SSN",
                     prefixIcon: Icon(
                       Icons.credit_card,
-                      // color: Color(0xff0D47A1),
                     ),
                   ),
                 ),
@@ -109,7 +106,6 @@ class _ProfileState extends State<Profile> {
                     hintText: "Examble@gmail.com",
                     prefixIcon: Icon(
                       Icons.email,
-                      // color:  Color(0xffffa726),
                     ),
                   ),
                 ),
@@ -117,19 +113,38 @@ class _ProfileState extends State<Profile> {
                   height: 20,
                 ),
                 TextFormField(
-                  //
-                  //  بحطها دي بتسحل البيانات الي خدتها من الفورمبحطها جوا Variable
-                  // controller: PasswordControler,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    hintText: "+020",
+                    prefixIcon: const Icon(
+                      Icons.phone,
+                    ),
+                    suffixIcon: TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "Change",
+                        style:
+                            TextStyle(color: Color(0xff0D47A1), fontSize: 16),
+                      ),
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return '';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
                   keyboardType: TextInputType.visiblePassword,
-                  // بحطها في متغير عشان اقدر اغير قيمتها
                   obscureText: isPassword,
                   decoration: InputDecoration(
                     hintText: "Password",
-                    // labelText: "Password",
-                    // labelStyle: TextStyle(color: Color(0xff0D47A1),),
                     prefixIcon: const Icon(
                       Icons.lock,
-                      // color: Color(0xff0D47A1),
                     ),
                     suffixIcon: IconButton(
                       onPressed: () {
@@ -141,7 +156,6 @@ class _ProfileState extends State<Profile> {
                         isPassword
                             ? Icons.visibility_off
                             : Icons.remove_red_eye,
-                        // color: const Color(0xff0D47A1),
                       ),
                     ),
                   ),
@@ -153,10 +167,7 @@ class _ProfileState extends State<Profile> {
                   },
                 ),
                 const SizedBox(
-                  height: 20,
-                ),
-                const SizedBox(
-                  height: 35,
+                  height: 55,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

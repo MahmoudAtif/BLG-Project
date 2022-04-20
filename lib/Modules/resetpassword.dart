@@ -61,14 +61,12 @@ class _ResetPasswordState extends State<ResetPassword> {
                 decoration: const InputDecoration(
                   labelText: 'Enter Verification Code',
                   prefixIcon: Icon(Icons.vpn_key_outlined),
-                  //border: OutlineInputBorder()
                 ),
               ),
               const SizedBox(
                 height: 30.0,
               ),
               TextFormField(
-                // controller: PasswordControler,
                 keyboardType: TextInputType.visiblePassword,
                 obscureText: isPassword,
                 decoration: InputDecoration(
@@ -98,7 +96,6 @@ class _ResetPasswordState extends State<ResetPassword> {
                 height: 30.0,
               ),
               TextFormField(
-                // controller: PasswordControler,
                 keyboardType: TextInputType.visiblePassword,
                 obscureText: isPassword,
                 decoration: InputDecoration(

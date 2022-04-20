@@ -60,7 +60,6 @@ class _ReportState extends State<Report> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         leading: const BackButton(),
-        // backgroundColor: const Color(0xff0D47A1),
         backgroundColor: Color(0xffffa726),
         title: const Text('Report a Violation'),
         centerTitle: true,
@@ -99,7 +98,7 @@ class _ReportState extends State<Report> {
                   child: DropdownButton(
                     value: dropvalue,
                     isExpanded: true,
-                    underline: SizedBox(),
+                    underline: const SizedBox(),
                     onChanged: (dynamic value) {
                       setState(() {
                         dropvalue = value;
@@ -192,13 +191,11 @@ class _ReportState extends State<Report> {
                   child: Row(
                     children: [
                       const Expanded(flex: 8, child: Text("Location In Map")),
-                      // Spacer(),
                       Expanded(
                         flex: 1,
                         child: IconButton(
                           onPressed: () {},
                           icon: const Icon(Icons.location_on),
-                          // color: const Color(0xff0D47A1),
                           color: Colors.blue,
                         ),
                       ),
@@ -230,7 +227,6 @@ class _ReportState extends State<Report> {
                         "Select a photo",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            // color: Color(0xff0D47A1),
                             color: Colors.blue,
                             fontSize: 15),
                       )),

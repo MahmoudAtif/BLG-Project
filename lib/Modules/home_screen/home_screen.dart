@@ -13,7 +13,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
-  List<Widget> Screens = [HomeScreen(), History()];
   int current = 0;
   var selectedIndex = 0;
   Widget build(BuildContext context) {
@@ -54,7 +53,6 @@ class _HomeScreenState extends State<HomeScreen> {
           'Home',
           style: TextStyle(color: Colors.black, letterSpacing: 1.5),
         ),
-        // backgroundColor: const Color(0xff0D47A1),
         backgroundColor: Colors.white,
       ),
       body: Padding(
@@ -193,8 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   borderRadius: BorderRadius.circular(20),
                   image: const DecorationImage(
                       fit: BoxFit.fill,
-                      image: NetworkImage(
-                          'https://focanocliente.com.br/wp-content/uploads/2020/10/customer-service.png')),
+                      image: AssetImage("assets/Services.png")),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(25.0),
@@ -218,22 +215,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         // ignore: deprecated_member_use
                         child: MaterialButton(
                           padding: const EdgeInsets.all(15),
-                          // shape: RoundedRectangleBorder(
-                          //     borderRadius: BorderRadius.circular(20)),
                           onPressed: () {
                             Navigator.of(context).pushNamed("report");
                           },
                           child: const Text("Learn More",
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  // letterSpacing: 1.5,
-                                  color: Colors.white)),
+                              style:
+                                  TextStyle(fontSize: 15, color: Colors.white)),
                         ),
                       ),
                     ],
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 20,
+              )
             ],
           ),
         ),
@@ -241,48 +237,11 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.support_agent),
-        // backgroundColor: const Color(0xff0D47A1),
         backgroundColor: const Color(0xffffa726),
       ),
-
-      // bottomNavigationBar: BottomNavigationBar(
-      //   backgroundColor: Colors.grey[200],
-      //   //لما بدوس علي الايكون بتفضل زي ماهيا
-      //   type: BottomNavigationBarType.fixed,
-      //   elevation: 30,
-      //   currentIndex: current,
-      //   onTap: (index) {
-      //     setState(() {
-      //       current = index;
-      //     });
-      //   },
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         Icons.home,
-      //       ),
-      //       label: 'home',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         Icons.add_rounded,
-      //       ),
-      //       label: 'Report a Violation',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         Icons.history,
-      //       ),
-      //       label: 'History',
-      //     ),
-      //   ],
-      // ),
-
       bottomNavigationBar: BottomAppBar(
-        // color: const Color(0xff0D47A1),
-        // color: Color(0xffF5F5F5),
         color: const Color(0xffffa726),
-        //For circular border around the FAB
+
         elevation: 1,
         shape: const CircularNotchedRectangle(),
         //Row of Icons
@@ -292,12 +251,9 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               IconButton(
                 icon: const Icon(Icons.home),
-
                 onPressed: () {
                   Navigator.of(context).pushNamed("home");
                 },
-
-                // color: Colors.white,
               ),
               const Spacer(),
               Container(
@@ -322,7 +278,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () {
                   Navigator.of(context).pushNamed("history");
                 },
-                // color: Colors.white,
               ),
             ],
           ),

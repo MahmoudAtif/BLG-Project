@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:get/get_core/src/get_main.dart';
-//import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:project/shared/shared.component/components.dart';
 
@@ -43,26 +41,6 @@ class _Start_screenState extends State<Start_screen> {
                   width: 200,
                   height: 200,
                 ),
-                // DropdownButton(
-                //   // ignore: prefer_const_literals_to_create_immutables
-                //   items: [
-                //     const DropdownMenuItem(
-                //       child: Text("English"),
-                //       value: 'English',
-                //     ),
-                //     const DropdownMenuItem(
-                //       child: Text("Arabic"),
-                //       value: 'Arabic',
-                //     ),
-                //   ],
-                //   value: selectedlang,
-                //   onChanged: (value) {
-                //     setState(() {
-                //       selectedlang != value;
-                //     });
-                //     Get.updateLocale(Locale(selectedlang));
-                //   },
-                // ),
               ],
             ),
           ),
@@ -71,7 +49,6 @@ class _Start_screenState extends State<Start_screen> {
             child: Container(
                 width: double.infinity,
                 decoration: const BoxDecoration(
-                    // color: Color(0xff0D47A1),
                     color: const Color(0xffffa726),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40.0),

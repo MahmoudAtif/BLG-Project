@@ -26,7 +26,6 @@ class _ForgetPasswordState extends State<ForgetPassword> {
         padding: const EdgeInsets.all(30.0),
         child: SingleChildScrollView(
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
@@ -57,7 +56,6 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                 decoration: const InputDecoration(
                   labelText: 'please enter your email',
                   prefixIcon: Icon(Icons.account_circle),
-                  //border: OutlineInputBorder()
                 ),
               ),
               const SizedBox(
